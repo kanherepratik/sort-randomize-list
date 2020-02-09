@@ -23,6 +23,7 @@
 
   const sortBtn = document.getElementById("sort");
   sortBtn.onclick = function() {
+    console.log(TABLE_DATA.sort().reverse());
     populateTable(TABLE_DATA.sort((a, b) => (a.price > b.price ? -1 : 1)));
   };
 
@@ -36,6 +37,7 @@
     stopBtn.onclick = function() {
       clearInterval(timeOut);
     };
+    alert("1 sec done");
     var timeOut = setInterval(() => populateTable(shuffle(TABLE_DATA)), 1000);
   };
 })(); // end of file
